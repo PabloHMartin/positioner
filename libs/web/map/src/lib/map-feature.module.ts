@@ -5,6 +5,7 @@ import { MapViewerComponent } from './map-viewer.component';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { DataAccessModule } from '@positioner/data-access';
 
 export const routes: Route[] = [{ path: '', component: MapViewerComponent }];
 
@@ -15,6 +16,7 @@ export const routes: Route[] = [{ path: '', component: MapViewerComponent }];
     FormsModule,
     IonicModule,
     GoogleMapsModule,
+    DataAccessModule,
   ],
   declarations: [MapViewerComponent],
   exports: [MapViewerComponent],

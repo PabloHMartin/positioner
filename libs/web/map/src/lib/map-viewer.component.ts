@@ -1,15 +1,13 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { StoreFacade } from '@positioner/data-access';
+import { toSignal } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'positioner-map-viewer',
   templateUrl: './map-viewer.component.html',
   styleUrls: ['./map-viewer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MapViewerComponent implements OnInit {
+export class MapViewerComponent {
   center = signal<google.maps.LatLngLiteral>({
     lat: 40.9764048,
     lng: -5.670027,
@@ -17,26 +15,7 @@ export class MapViewerComponent implements OnInit {
   options: google.maps.MapOptions = {
     zoom: 14,
   };
-  markers = signal<any>([]);
+  markers = toSignal(this.store.markers$);
 
-  ngOnInit() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position);
-
-      this.markers.set([
-        {
-          position: {
-            lat: 40.9764048,
-            lng: -5.670027,
-          },
-          label: {
-            color: 'red',
-            text: 'Marker label ' + (this.markers().length + 1),
-          },
-          title: 'Marker title ' + (this.markers().length + 1),
-          options: { animation: google.maps.Animation.BOUNCE },
-        },
-      ]);
-    });
-  }
+  constructor(private store: StoreFacade) {}
 }
