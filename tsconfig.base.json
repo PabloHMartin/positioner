@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@positioner/map-feature": ["libs/web/map/src/index.ts"],
+      "@positioner/shell-feature": ["libs/web/shell/shell-feature/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

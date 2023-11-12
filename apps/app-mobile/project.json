@@ -1,20 +1,20 @@
 {
-  "name": "positioner",
+  "name": "app-mobile",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "positioner",
-  "sourceRoot": "apps/positioner/src",
+  "sourceRoot": "apps/app-mobile/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/positioner",
-        "index": "apps/positioner/src/index.html",
-        "main": "apps/positioner/src/main.ts",
+        "outputPath": "dist/apps/app-mobile",
+        "index": "apps/app-mobile/src/index.html",
+        "main": "apps/app-mobile/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/positioner/tsconfig.app.json",
+        "tsConfig": "apps/app-mobile/tsconfig.app.json",
         "assets": [
           {
             "glob": "**/*",
@@ -28,8 +28,8 @@
           }
         ],
         "styles": [
-          "apps/positioner/src/theme/variables.scss",
-          "apps/positioner/src/global.scss"
+          "apps/app-mobile/src/theme/variables.scss",
+          "apps/app-mobile/src/global.scss"
         ],
         "scripts": []
       },
@@ -64,10 +64,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "positioner:build:production"
+          "browserTarget": "app-mobile:build:production"
         },
         "development": {
-          "browserTarget": "positioner:build:development"
+          "browserTarget": "app-mobile:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "positioner:build"
+        "browserTarget": "app-mobile:build"
       }
     },
     "lint": {
@@ -83,8 +83,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/positioner/**/*.ts",
-          "apps/positioner/**/*.html"
+          "apps/app-mobile/**/*.ts",
+          "apps/app-mobile/**/*.html"
         ]
       }
     },
@@ -92,7 +92,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/positioner/jest.config.ts",
+        "jestConfig": "apps/app-mobile/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
