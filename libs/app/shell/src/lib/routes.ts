@@ -3,8 +3,7 @@ import { Route } from '@angular/router';
 export const appRoutes: Route[] = [
   {
     path: 'home',
-    loadChildren: () =>
-      import('@positioner/map-feature').then((m) => m.MapfeatureModule),
+    loadChildren: () => import('@app/homepage').then((m) => m.HomepageModule),
   },
   {
     path: '',

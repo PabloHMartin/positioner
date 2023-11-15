@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>APP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ng-container>
+    <ion-button (click)="startSendingPosition()"
+      >Start sending position</ion-button
+    >
+    <ion-button (click)="stopSendingPosition()"
+      >Stop sending position</ion-button
+    >
+  </ng-container>
+</ion-content>

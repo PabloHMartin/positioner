@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { select, Store, Action } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 
 import * as StoreActions from './store.actions';
 import * as StoreFeature from './store.reducer';

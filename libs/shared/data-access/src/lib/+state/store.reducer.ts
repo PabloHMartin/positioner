@@ -34,7 +34,7 @@ export const initialStoreState: StoreState = storeAdapter.getInitialState({
         text: 'Marker 1',
       },
       title: 'Marker title 1',
-      options: { animation: 'BOUNCE' },
+      options: { animation: google.maps.Animation.BOUNCE },
     },
     {
       position: {
@@ -46,7 +46,7 @@ export const initialStoreState: StoreState = storeAdapter.getInitialState({
         text: 'Marker 2',
       },
       title: 'Marker title 2',
-      options: { animation: 'BOUNCE' },
+      options: { animation: google.maps.Animation.BOUNCE },
     },
     {
       position: {
@@ -58,7 +58,7 @@ export const initialStoreState: StoreState = storeAdapter.getInitialState({
         text: 'Marker 3',
       },
       title: 'Marker title 3',
-      options: { animation: 'BOUNCE' },
+      options: { animation: google.maps.Animation.BOUNCE },
     },
   ],
 });
